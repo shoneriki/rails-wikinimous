@@ -1,3 +1,4 @@
 <h2><%= @article.title %></h2>
 <p><%= @article.content %></p>
-<%= link_to 'articles page', articles_path, class: "btn btn-primary"%>
+<%= link_to 'articles page', articles_path, class: "btn btn-info"%>
+<%= link_to "edit this article", edit_article_path, class: "btn btn-warning"  %>
