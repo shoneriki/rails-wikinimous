@@ -1,16 +1,29 @@
 <div class="container">
-<h1>My articles</h1>
+<h1>Wikinimous</h1>
 
-<ol>
-  <% @articles.each do |article| %>
-  <li>
-  <%= link_to article.title, article_path(article) %> <%= link_to article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete #{article.title}? "} do %>
-    <i class="fas fa-trash"></i>
-  <% end %>
-  </li>
-  <p><%= article.content %></p>
-  <% end  %>
-</ol>
+<div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-12 col-sm-4 my-1">
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <p>
+            <%= link_to article.title, article_path(article) %> <%= link_to article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete #{article.title}? "} do %>
+              <i class="fas fa-trash-alt" style="color:red"></i>
+            <% end %>
+           </p>
+            <p><%= article.content %></p>
+          </div>
+        </div>
+      </div>
+    <% end  %>
+  </div>
 
-<%= link_to "add new article", new_article_path, class:"btn btn-primary" %>
+
+
+
+<%= link_to new_article_path do %>
+  <i class="fas fa-plus btn btn-success"> Add A New Article</i>
+<% end  %>
+
 </div>

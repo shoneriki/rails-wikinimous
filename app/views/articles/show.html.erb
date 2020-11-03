@@ -1,4 +1,16 @@
-<h2><%= @article.title %></h2>
-<p><%= @article.content %></p>
-<%= link_to 'articles page', articles_path, class: "btn btn-info"%>
-<%= link_to "edit this article", edit_article_path, class: "btn btn-warning"  %>
+<div class="container">
+  <div class="card-product mt-5">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @article.title %></h2>
+      <p><%= @article.content %></p>
+      <%= link_to articles_path do%>
+        <i class="fas fa-fast-backward btn btn-danger"> Back</i>
+      <% end  %>
+      <%= link_to edit_article_path do%>
+        <i class="fas fa-edit btn btn-warning"> Edit</i>
+      <% end %>
+    </div>
+  </div>
+</div>
+
